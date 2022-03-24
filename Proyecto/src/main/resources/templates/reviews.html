@@ -24,26 +24,34 @@
         </header>
 
         <section id="contenido">
-            <br><br><br>
-            <table border="1">
-            <tr>
-                <th>Titulo</th>
-                <th>Autor</th>
-                <th>Review</th>
-                <th>Date</th>
-                <th>Eliminar</th>
-                
-            </tr>
-            <tr th:each="item : ${postsDB}">
-                <td th:text="${item.titulo}"></td>
-                <td th:text="${item.autor}"></td>
-                <td th:text="${item.review}"></td>
-                <td th:text="${item.postDate}"></td>
-                <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
-            </tr>
-        </table>
+
+            <br><h1>LISTADO DE RESEÑAS</h1><br><br>
+            <div th:if="${postsDB != null and !postsDB.empty}">
+                <table border="1">
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Review</th>
+                        <th>Date</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                    <tr th:each="item : ${postsDB}">
+                        <td th:text="${item.titulo}"></td>
+                        <td th:text="${item.autor}"></td>
+                        <td th:text="${item.review}"></td>
+                        <td th:text="${item.postDate}"></td>
+                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div th:if="${postsDB == null or postsDB.empty}"> 
+                No existen reseñas para mostrar
+            </div>
+            
         </section>
-        
+
         <footer id="pieDePagina">
             Derechos reservados DreamTeam &reg; 2022
         </footer>
