@@ -25,20 +25,20 @@
 
         <section id="contenido">
             <div class="center">
-               <br><h1>LISTADO DE RESEÑAS</h1><br> 
+                <br><h1>LISTADO DE RESEÑAS</h1><br> 
             </div>
-            
+
             <div th:if="${postsDB != null and !postsDB.empty}" class="center">
                 <table border="1">
                     <tr>
-                        <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
-                        <br>
-                        <br> 
-                        <th>Titulo</th>
-                        <th>Autor</th>
-                        <th>Review</th>
-                        <th>Date</th>
-                        <th>Eliminar</th>
+                    <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
+                    <br>
+                    <br> 
+                    <th>Restaurante</th>
+                    <th>Autor</th>
+                    <th>Reseña</th>
+                    <th>Fecha</th>
+                    <th>Eliminar</th>
 
                     </tr>
                     <tr th:each="item : ${postsDB}">
@@ -54,10 +54,7 @@
             <div th:if="${postsDB == null or postsDB.empty}" class="center"> 
                 No existen reseñas para mostrar
             </div>
-            
-            <div class="center">
-                <h3>Esta sección está en desarrollo, no representa resultados finales.</h3>
-            </div>
+
         </section>
 
         <footer id="pieDePagina">

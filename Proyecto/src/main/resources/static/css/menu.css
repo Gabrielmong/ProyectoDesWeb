@@ -6,7 +6,7 @@
 }
 
 .header {
-    background-color: #ccb3b3;
+    background-color: #c12d31;
     height: 8.7%;
     position: fixed;
     top: 0;
@@ -22,7 +22,7 @@
 }
 
 .nav-link{
-    color: #d62300;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .nav-menu-item:hover {
-    background-color: #502314;
+    background-color: #f5c300;
     transition: 0.5s;
 }
 
