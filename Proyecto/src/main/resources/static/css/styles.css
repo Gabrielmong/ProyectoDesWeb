@@ -1,0 +1,40 @@
+#pieDePagina {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3%;
+    width: 100%;
+    background-color: #ccb3b3;
+    color: #d62300;
+    text-align: center;
+}
+
+#contenido {
+    position: absolute;
+    top: 8.7%;
+    left: 0%;
+    height: 90%;
+    width: 100%;
+    background-color: #f5ebdc;
+    color: black;
+    overflow: auto;
+}
+
+#arroz_con_pollo{
+    text-indent: 20px;
+}
+
+#chifrijo{
+    text-indent: 20px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+*{
+ font-family: 'Helvetica', sans-serif;
+}
