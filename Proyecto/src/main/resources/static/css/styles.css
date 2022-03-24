@@ -20,21 +20,24 @@
     overflow: auto;
 }
 
-#arroz_con_pollo{
-    text-indent: 20px;
-}
 
 #chifrijo{
     text-indent: 20px;
 }
 
 .center {
+    margin: auto;
+    width: 60%;
+    border: 5px;
+    padding: 10px;
+}
+.center-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 50%;
 }
-
 *{
- font-family: 'Helvetica', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
     <head>
-        <title>COMIDAS</title>
+        <title>Placeholder</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     </head>
 
     <body>
 
         <header class="header">
             <nav class="nav">
-                <a href="index.html" class="nav-link logo">COMIDAS</a>
+                <a href="index.html" class="nav-link logo">Placeholder</a>
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Review.html">Reseñas</a></li>
@@ -30,6 +31,7 @@
                 <th>Autor</th>
                 <th>Review</th>
                 <th>Date</th>
+                <th>Eliminar</th>
                 
             </tr>
             <tr th:each="item : ${postsDB}">
@@ -37,6 +39,7 @@
                 <td th:text="${item.autor}"></td>
                 <td th:text="${item.review}"></td>
                 <td th:text="${item.postDate}"></td>
+                <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
             </tr>
         </table>
         </section>

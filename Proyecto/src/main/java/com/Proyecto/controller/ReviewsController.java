@@ -1,5 +1,6 @@
 package com.Proyecto.controller;
 
+import com.Proyecto.domain.Post;
 import com.Proyecto.service.PostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class ReviewsController {
         model.addAttribute("postsDB", postsDB);
         
         return "reviews";
+    }
+    
+    @GetMapping("/eliminarPost/{idPub}")
+    public String eliminarPost(Post post){
+        postService.delete(post);
+        return "redirect:/Review.html";
     }
     
     
