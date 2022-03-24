@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-
+//HOLA
 @Controller
 @Slf4j
 public class ReviewsController {
@@ -31,5 +31,10 @@ public class ReviewsController {
         return "redirect:/Review.html";
     }
     
+    @GetMapping("/agregarPost/")
+    public String agregarPost(Post post){
+        postService.save(post);
+        return "redirect:/Review.html";
+    }
     
 }
