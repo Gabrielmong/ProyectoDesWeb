@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html>
     <head>
         <title>Placeholder</title>
         <meta charset="UTF-8">
@@ -24,35 +24,10 @@
         </header>
 
         <section id="contenido">
-
-            <br><h1>LISTADO DE RESEÑAS</h1><br>
-            <div th:if="${postsDB != null and !postsDB.empty}">
-                <table border="1">
-                    <tr>
-                        <a href="agregarPost.html">Agregar nueva reseña</a>
-                        <br>
-                        <br>
-                        <th>Titulo</th>
-                        <th>Autor</th>
-                        <th>Review</th>
-                        <th>Date</th>
-                        <th>Eliminar</th>
-
-                    </tr>
-                    <tr th:each="item : ${postsDB}">
-                        <td th:text="${item.titulo}"></td>
-                        <td th:text="${item.autor}"></td>
-                        <td th:text="${item.review}"></td>
-                        <td th:text="${item.postDate}"></td>
-                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
-                    </tr>
-                </table>
-            </div>
-
-            <div th:if="${postsDB == null or postsDB.empty}"> 
-                No existen reseñas para mostrar
-            </div>
             
+            <a href="Review.html">Regresar</a>
+            
+
         </section>
 
         <footer id="pieDePagina">

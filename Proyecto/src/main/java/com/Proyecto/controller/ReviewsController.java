@@ -31,7 +31,13 @@ public class ReviewsController {
         return "redirect:/Review.html";
     }
     
-    @GetMapping("/agregarPost/")
+    @GetMapping("/redPost")
+    public String redPost(Model model){
+        
+        return "redirect:/agregarPost";
+    }
+    
+    @GetMapping("/agregarPost/guardar")
     public String agregarPost(Post post){
         postService.save(post);
         return "redirect:/Review.html";
