@@ -25,34 +25,51 @@
         <section id="contenido">
             <div class="contenido">
                 <div class="center">
+                    <br>
                     <h2>Nueva reseña</h2>
-                    <br><br>
-                    <a th:href="@{/Review.html}">Regresar</a>
-                    <br><br>
-
+                    <br>
                     <form th:action="@{/guardarPost/}"
                           method="post"
                           th:object="${post}">
-                        <input type="hidden" name="idPub" th:field="*{idPub}" />
-                        <label for="titulo">Restaurante: </label>
-                        <input type="text" name="titulo" th:field="*{titulo}" />
-                        <br>
-                        <label for="autor">Autor: </label>
-                        <input type="text" name="autor" th:field="*{autor}" />
-                        <br>
-                        <label for="review">Reseña: </label>
-                        <input type="text" name="review" th:field="*{review}" />
-                        <br>
-                        <label for="postDate">Fecha: </label>
-                        <input type="date" name="postDate" th:field="*{postDate}" />
-                        <br><br>
+                        <p>
+                             <br>
+                            <input type="hidden" name="idPub" th:field="*{idPub}" />
+                            <label for="titulo">Restaurante: </label>
+                            <input type="text" name="titulo" th:field="*{titulo}"  />
+                             <br>
+                        </p>
+                        <p>
+                            <br>
+                            <label for="autor">Autor: </label>
+                            <input type="text" name="autor" th:field="*{autor}" />
+                             <br>
+                        </p>
+                        <p>
+                             <br>
+                            <label for="review">Reseña: </label>
+                            <input type="text" name="review" th:field="*{review}" />
+                            <br>
+                        </p>
+                        <p>
+                             <br>
+                            <label for="postDate">Fecha: </label>
+                            <input type="date" name="postDate" th:field="*{postDate}" />
+                             <br>
+                        </p>
+                         <br>
+                          <br>
                         <input type="submit" name="guardar" value="Guardar Reseña" />
                     </form>
+                    <br>
+                    <br>
+                    <a th:href="@{/Review.html}">Regresar</a>
+                    <br>
+                    <br>
                     </section>
                     <footer id="pieDePagina">
                         Derechos reservados DreamTeam &reg; 2022
                     </footer>
                 </div>
-                </div>
-                </body>
-                </html>
+            </div>
+    </body>
+</html>

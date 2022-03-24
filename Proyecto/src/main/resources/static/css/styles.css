@@ -4,8 +4,8 @@
     left: 0;
     height: 3%;
     width: 100%;
-    background-color: #c12d31;
-    color: #ffffff;
+    background-color: #B1191D;
+    color: #FCF7EA;
     text-align: center;
 }
 
@@ -15,7 +15,7 @@
     left: 0%;
     height: 90%;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #FCF7EA;
     color: black;
     overflow: auto;
 }
