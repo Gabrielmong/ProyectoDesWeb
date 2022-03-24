@@ -29,9 +29,9 @@
             <div th:if="${postsDB != null and !postsDB.empty}">
                 <table border="1">
                     <tr>
-                        <a href="agregarPost.html">Agregar nueva reseña</a>
+                        <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
                         <br>
-                        <br>
+                        <br> 
                         <th>Titulo</th>
                         <th>Autor</th>
                         <th>Review</th>

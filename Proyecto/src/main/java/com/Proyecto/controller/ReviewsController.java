@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 //HOLA
@@ -30,17 +31,21 @@ public class ReviewsController {
         postService.delete(post);
         return "redirect:/Review.html";
     }
-    
+    /*
     @GetMapping("/redPost")
     public String redPost(Model model){
         
         return "redirect:/agregarPost";
     }
-    
-    @GetMapping("/agregarPost/guardar")
+    */
+    @GetMapping("/agregarPost")
     public String agregarPost(Post post){
+        return "agregarPost";
+    }
+    
+    @PostMapping("/guardarPost")
+    public String guardarPost(Post post){
         postService.save(post);
         return "redirect:/Review.html";
     }
-    
 }

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Placeholder</title>
+        <title>Agregar nueva reseña</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     </head>
-
     <body>
 
         <header class="header">
@@ -24,14 +23,34 @@
         </header>
 
         <section id="contenido">
-            
-            <a href="Review.html">Regresar</a>
-            
+            <div class="contenido">
+                <h2>Datos</h2>
+                <br><br>
+                <a th:href="@{/Review.html}">Regresar</a>
+                <br><br>
 
+                <form th:action="@{/guardarPost/}"
+                      method="post"
+                      th:object="${post}">
+                    <input type="hidden" name="idPub" th:field="*{idPub}" />
+                    <label for="titulo">Titulo: </label>
+                    <input type="text" name="titulo" th:field="*{titulo}" />
+                    <br>
+                    <label for="autor">Autor: </label>
+                    <input type="text" name="autor" th:field="*{autor}" />
+                    <br>
+                    <label for="review">Review: </label>
+                    <input type="text" name="review" th:field="*{review}" />
+                    <br>
+                    <label for="postDate">Date: </label>
+                    <input type="date" name="postDate" th:field="*{postDate}" />
+                    <br><br>
+                    <input type="submit" name="guardar" value="Guardar Reseña" />
+                </form>
         </section>
-
         <footer id="pieDePagina">
             Derechos reservados DreamTeam &reg; 2022
         </footer>
-    </body>
+    </div>
+</body>
 </html>
