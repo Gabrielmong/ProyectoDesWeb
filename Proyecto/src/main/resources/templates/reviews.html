@@ -31,6 +31,7 @@
             <div th:if="${postsDB != null and !postsDB.empty}" class="center">
                 <table border="1">
                     <tr>
+<<<<<<< Updated upstream
                     <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
                     <br>
                     <br> 
@@ -39,6 +40,18 @@
                     <th>Reseña</th>
                     <th>Fecha</th>
                     <th>Eliminar</th>
+=======
+                        <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
+                        <br>
+                        <br> 
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Review</th>
+                        <th>Date</th>
+                        <th>Eliminar</th>
+                        <th>Ver</th>
+                        
+>>>>>>> Stashed changes
 
                     </tr>
                     <tr th:each="item : ${postsDB}">
@@ -47,8 +60,11 @@
                         <td th:text="${item.review}"></td>
                         <td th:text="${item.postDate}"></td>
                         <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
+                        <td><a th:href="@{/verPost/} + ${item.idPub}">Ver</a></td>
                     </tr>
                 </table>
+                
+               
             </div>
 
             <div th:if="${postsDB == null or postsDB.empty}" class="center"> 

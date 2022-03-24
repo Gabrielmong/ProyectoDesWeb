@@ -31,13 +31,7 @@ public class ReviewsController {
         postService.delete(post);
         return "redirect:/Review.html";
     }
-    /*
-    @GetMapping("/redPost")
-    public String redPost(Model model){
-        
-        return "redirect:/agregarPost";
-    }
-    */
+    
     @GetMapping("/agregarPost")
     public String agregarPost(Post post){
         return "agregarPost";
@@ -48,4 +42,13 @@ public class ReviewsController {
         postService.save(post);
         return "redirect:/Review.html";
     }
+    
+    @GetMapping("/verPost/{idPub}")
+    public String verPost(Model model, Post post){
+        var postDB = postService.getPost(post);
+        
+        model.addAttribute("postDB", postDB);
+        return "testing";
+    }
+    
 }
