@@ -38,7 +38,6 @@
                     <th>Autor</th>
                     <th>Reseña</th>
                     <th>Fecha</th>
-                    <th>Ver</th>
                     <th>Eliminar</th>
 
                     </tr>
@@ -47,8 +46,8 @@
                         <td th:text="${item.autor}"></td>
                         <td th:text="${item.review}"></td>
                         <td th:text="${item.postDate}"></td>
-                        <td><a th:href="@{/verPost/} + ${item.idPub}">Ver</a></td>
                         <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
+                        <td><a th:href="@{/verPost/} + ${item.idPub}">Ver</a></td>
                     </tr>
                 </table>
 
