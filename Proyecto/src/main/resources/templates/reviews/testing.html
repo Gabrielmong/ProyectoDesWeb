@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Placeholder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header class="header">
+            <nav class="nav">
+                <a href="/" class="nav-link logo">Placeholder</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/">Inicio</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Review.html">Reseñas</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Restaurants.html">Restaurantes</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Recommendations.html">Recomendaciones</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="contenido">
+            <div class="center">
+
+
+                <h1 th:text="${postDB.titulo}"></h1>  <h4 th:text="${postDB.autor}"></h4> <h5 th:text="${postDB.postDate}"></h5><br>
+
+                <p th:text="${postDB.review}"></p>
+                <br>
+                
+
+                <h3>Esta sección está en desarrollo, no representa resultados finales.</h3>
+                <a>Tenemos un ligero problema aqui xd</a><br>
+                
+                
+            </div>
+        </section>
+
+        <footer id="pieDePagina">
+            Derechos reservados DreamTeam &reg; 2022
+        </footer>
+    </body>
+</html>

@@ -8,21 +8,18 @@
         <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     </head>
-
     <body>
-
         <header class="header">
             <nav class="nav">
-                <a href="index.html" class="nav-link logo">Placeholder</a>
+                <a href="/" class="nav-link logo">Placeholder</a>
                 <ul class="nav-menu">
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/">Inicio</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Review.html">Reseñas</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Restaurants.html">Restaurantes</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Recommendations.html">Recomendaciones</a></li>
                 </ul>
             </nav>
         </header>
-
         <section id="contenido">
             <div class="center">
                 <br><h1>LISTADO DE RESEÑAS</h1><br> 
@@ -35,8 +32,6 @@
                     <br>
                     <br> 
                     <th>Restaurante</th>
-                    <th>Autor</th>
-                    <th>Reseña</th>
                     <th>Fecha</th>
                     <th>Ver</th>
                     <th>Eliminar</th>
@@ -44,15 +39,11 @@
                     </tr>
                     <tr th:each="item : ${postsDB}">
                         <td th:text="${item.titulo}"></td>
-                        <td th:text="${item.autor}"></td>
-                        <td th:text="${item.review}"></td>
                         <td th:text="${item.postDate}"></td>
-                        <td><a th:href="@{/verPost/} + ${item.idPub}">Ver</a></td>
+                        <td><a th:href="@{/reviews/} + ${item.idPub}">Ver</a></td>
                         <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
                     </tr>
                 </table>
-
-
             </div>
 
             <div th:if="${postsDB == null or postsDB.empty}" class="center"> 

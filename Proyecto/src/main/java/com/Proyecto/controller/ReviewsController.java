@@ -18,37 +18,21 @@ public class ReviewsController {
     @Autowired
     private PostService postService;
     
-    @GetMapping("/Review.html")
-    public String inicio (Model model){
-        var postsDB = postService.getPost();
-        model.addAttribute("postsDB", postsDB);
-        
-        return "reviews";
-    }
     
-    @GetMapping("/eliminarPost/{idPub}")
-    public String eliminarPost(Post post){
-        postService.delete(post);
-        return "redirect:/Review.html";
-    }
-    
-    @GetMapping("/agregarPost")
-    public String agregarPost(Post post){
-        return "agregarPost";
-    }
-    
-    @PostMapping("/guardarPost")
-    public String guardarPost(Post post){
-        postService.save(post);
-        return "redirect:/Review.html";
-    }
-    
-    @GetMapping("/verPost/{idPub}")
+    @GetMapping("/reviews/{idPub}")
     public String verPost(Model model, Post post){
         var postDB = postService.getPost(post);
         
         model.addAttribute("postDB", postDB);
-        return "testing";
+        return "reviews/testing";
+    }
+    
+    @GetMapping("/reviews/Review.html")
+    public String returnRev(Model model){
+        var postsDB = postService.getPost();
+        model.addAttribute("postsDB", postsDB);
+        
+        return "/templates/reviews";
     }
     
 }
