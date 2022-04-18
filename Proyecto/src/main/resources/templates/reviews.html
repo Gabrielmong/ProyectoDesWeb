@@ -1,5 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/images/search.png');
+            background-position: 14px 14px;
+            background-repeat: no-repeat;
+            width: 58%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            border-radius: 8px
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.headerT, #myTable tr:hover {
+            background-color: #c12d31;
+        }
+        .button {
+            border: none;
+            width: 40%;
+            color: white;
+            background-color: #c12d31;
+            padding: 12px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px
+        }
+        
+        .button:hover{
+            background-color: #990000;
+        }
+        
+
+
+    </style>
     <head>
         <title>Placeholder</title>
         <meta charset="UTF-8">
@@ -26,15 +84,16 @@
             </div>
 
             <div th:if="${postsDB != null and !postsDB.empty}" class="center">
-                <table border="1">
-                    <tr>
-                    <a th:href="@{/agregarPost}">Agregar nueva reseña</a>
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Restaurantes" title="Type in a name">
+                <table id="myTable">
+                    <tr class="headerT">
+                    <a th:href="@{/agregarPost}" class="button" >Agregar nueva reseña</a>
                     <br>
                     <br> 
-                    <th>Restaurante</th>
-                    <th>Fecha</th>
-                    <th>Ver</th>
-                    <th>Eliminar</th>
+                    <th style="width:40%; color:white" >Restaurante</th>
+                    <th style="width:30%; color:white">Fecha</th>
+                    <th style="width:15%; color:white">Ver</th>
+                    <th style="width:15%; color:white">Eliminar</th>
 
                     </tr>
                     <tr th:each="item : ${postsDB}">
@@ -55,5 +114,26 @@
         <footer id="pieDePagina">
             Derechos reservados DreamTeam &reg; 2022
         </footer>
+
+        <script>
+            function myFunction() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

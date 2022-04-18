@@ -8,11 +8,43 @@
         <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     </head>
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #FCF7EA;
+            padding: 20px;
+        }
+    </style>
     <body>
 
         <header class="header">
             <nav class="nav">
-                <a href="index.html" class="nav-link logo">Placeholder</a>
+                <a href="/" class="nav-link logo">Placeholder</a>
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/">Inicio</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Review.html">Reseñas</a></li>
@@ -30,7 +62,8 @@
                     <br>
                     <form th:action="@{/guardarPost/}"
                           method="post"
-                          th:object="${post}">
+                          th:object="${post}"
+                          action="#0">
                         <p>
                             <br>
                             <input type="hidden" name="idPub" th:field="*{idPub}" />
@@ -47,7 +80,7 @@
                         <p>
                             <br>
                             <label for="review">Reseña: </label><br>
-                            <textarea name="review" rows="15" cols="70" maxlength="499" th:field="*{review}">Escriba su reseña aquí.</textarea>
+                            <textarea name="review" rows="15" cols="80%" maxlength="1000" th:field="*{review}">Escriba su reseña aquí.</textarea>
                             <br>
                         </p>
                         <p>
@@ -64,11 +97,7 @@
                     <br>
                     <a th:href="@{/Review.html}">Regresar</a>
                     <br>
-                    <form action="/action_page.php">
-                        <label for="img">Select image:</label>
-                        <input type="file" id="img" name="img" accept="image/*">
-                        <input type="submit">
-                    </form>
+                    
                     <br>
                     </section>
                     <footer id="pieDePagina">
@@ -77,5 +106,6 @@
 
                 </div>
             </div>
+            
     </body>
 </html>
