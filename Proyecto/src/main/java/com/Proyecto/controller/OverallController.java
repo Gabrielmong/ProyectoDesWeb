@@ -29,7 +29,7 @@ public class OverallController {
         var postsDB = postService.getPost();
         model.addAttribute("postsDB", postsDB);
         
-        return "reviews";
+        return "reviews/reviews";
     }
     
     @GetMapping("/eliminarPost/{idPub}")
@@ -47,5 +47,13 @@ public class OverallController {
     public String guardarPost(Post post){
         postService.save(post);
         return "redirect:/Review.html";
+    }
+    
+    @GetMapping("/editPost/{idPub}")
+    public String modificarCliente(Post post, Model model) {
+        var respuesta = postService.getPost(post);
+        model.addAttribute("post", respuesta);
+
+        return "/edit";
     }
 }
