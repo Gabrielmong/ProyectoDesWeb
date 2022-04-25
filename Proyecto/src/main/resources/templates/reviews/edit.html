@@ -64,9 +64,9 @@
                 <a href="/" class="nav-link logo">Placeholder</a>
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/">Inicio</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Review.html">Reseñas</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Restaurants.html">Restaurantes</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Recommendations.html">Recomendaciones</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Review.html">Reseñas</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Restaurants.html">Restaurantes</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/Recommendations.html">Recomendaciones</a></li>
                 </ul>
             </nav>
         </header>
@@ -129,7 +129,7 @@
         const textArea = document.getElementById('textArea');
         const remainingChars = document.getElementById('textArea-ramaining');
         const maxChars = 1000;
-        textArea.addEventListener('input', ()=> {
+        textArea.addEventListener('input', () => {
             const remaining = maxChars - textArea.value.length;
             const color = remaining < maxChars * 0.1 ? 'red': null;
             
