@@ -54,6 +54,6 @@ public class OverallController {
         var respuesta = postService.getPost(post);
         model.addAttribute("post", respuesta);
 
-        return "/edit";
+        return "/reviews/edit";
     }
 }
