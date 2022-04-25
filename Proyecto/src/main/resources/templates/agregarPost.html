@@ -97,7 +97,7 @@
                             <br>
                             <label for="review">Reseña: </label><br>
                             <textarea id="textArea" th:field="*{review}" maxlength="1000" placeholder="Escriba aquí..."></textarea>
-                            <div id="textArea-ramaining">1000 caracteres restantes.</div>
+                            <div id="textArea-ramaining" style="display: none">1000 caracteres restantes.</div>
                             
                         </p>
                         <p>
@@ -132,7 +132,7 @@
         textArea.addEventListener('input', ()=> {
             const remaining = maxChars - textArea.value.length;
             const color = remaining < maxChars * 0.1 ? 'red': null;
-            
+            remainingChars.style.display = "block";
             remainingChars.textContent = `${remaining} caracteres restantes.`;
             remainingChars.style.color = color;
         });

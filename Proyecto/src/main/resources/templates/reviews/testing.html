@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
     <head>
         <title>Placeholder</title>
         <meta charset="UTF-8">
@@ -8,7 +8,21 @@
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     </head>
-
+    <style>
+        .editButton {
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+    </style>
     <body>
 
         <header class="header">
@@ -31,8 +45,8 @@
 
                 <p th:text="${postDB.review}"></p>
                 <br>
-                
-                <a th:href="@{/editPost/}+${postDB.idPub}">Editar</a>
+
+                <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}">Editar</a>
             </div>
         </section>
 
