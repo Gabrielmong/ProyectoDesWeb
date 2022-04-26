@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Agregar nueva reseña</title>
+        <title>EmpanadaReview | Agregar nueva reseña</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="html, css, web, fidelitas, comida">
+        <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-        
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <style>
         input[type=text], select {
@@ -41,14 +44,14 @@
             background-color: #FCF7EA;
             padding: 20px;
         }
-        
+
         #textArea {
             width: 100%;
             height: 160px;
             border-radius: 5px;
             border-color: #cdcdcd
         }
-        #textArea-ramaining{
+        #textArea-remaining{
             font-size: 14px;
             text-align: right;
             font-weight: bold;
@@ -59,19 +62,33 @@
         .wrapper {
             text-align: center;
         }
+        .backButton {
+            border: none;
+            color: white;
+            padding: 13px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: grey;
+            border-radius: 5px;
+        }
+
+        #contenido {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            background-color: #FCF7EA;
+            color: black;
+            overflow: auto;
+        }
     </style>
     <body>
-        <header class="header">
-            <nav class="nav">
-                <a href="/" class="nav-link logo">Placeholder</a>
-                <ul class="nav-menu">
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="/">Inicio</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Review.html">Reseñas</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Restaurants.html">Restaurantes</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Recommendations.html">Recomendaciones</a></li>
-                </ul>
-            </nav>
-        </header>
+
         <section id="contenido">
             <div class="contenido">
                 <div class="center">
@@ -99,8 +116,8 @@
                             <br>
                             <label for="review">Reseña: </label><br>
                             <textarea id="textArea" th:field="*{review}" maxlength="1000" placeholder="Escriba aquí..."></textarea>
-                            <div id="textArea-ramaining" style="display: none">1000 caracteres restantes.</div>
-                            
+                        <div id="textArea-remaining" style="display: none">1000 caracteres restantes.</div>
+
                         </p>
                         <p>
                             <label for="postDate">Fecha: </label>
@@ -110,15 +127,16 @@
                         <br>
                         <br>
                         <div class="wrapper">
+                            <a th:href="@{/Review.html}" class="backButton">Regresar</a>
                             <input type="submit" name="guardar" value="Guardar Reseña" style="width: 200px;"/>
+
                         </div>
-                        
+
                     </form>
                     <br>
                     <br>
-                    <a th:href="@{/Review.html}">Regresar</a>
                     <br>
-                    
+
                     <br>
                     </section>
                     <footer id="pieDePagina">
@@ -129,15 +147,15 @@
     </body>
     <script>
         const textArea = document.getElementById('textArea');
-        const remainingChars = document.getElementById('textArea-ramaining');
+        const remainingChars = document.getElementById('textArea-remaining');
         const maxChars = 1000;
-        textArea.addEventListener('input', ()=> {
+        textArea.addEventListener('input', () => {
             const remaining = maxChars - textArea.value.length;
-            const color = remaining < maxChars * 0.1 ? 'red': null;
+            const color = remaining < maxChars * 0.1 ? 'red' : null;
             remainingChars.style.display = "block";
             remainingChars.textContent = `${remaining} caracteres restantes.`;
             remainingChars.style.color = color;
         });
     </script>
-    
+
 </html>

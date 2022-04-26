@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
+
+<html xmlns:th="http://wwww.thymeleaf.org"
+      lang="es">
+    <head th:fragment="head">
         <title>EmpanadaReview</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="html, css, web, fidelitas, comida">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -14,7 +17,7 @@
     </head>
 
     <body>
-        <header>
+        <header th:fragment="header">
             <nav class="navbar navbar-inverse" style="background-color: #c12d31; border-radius: 0px;">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -31,40 +34,7 @@
                 </div>
             </nav>
         </header>
-        <section id="contenido">
-            <div class="center">
-                <br><h2><strong><u>Mis Restaurantes favoritos</u></strong></h2><br>
-            </div>
-            <div class="center">
-                <article id="prim_rest">
-                    <header><h3>&#8226;   El novillo alegre: Parrillada argentina</h3></header>
-                    <br><br>
-                    <iframe src="https://restauranteelnovilloalegre.com/" width="1000" height="400" ></iframe>
-                </article>
-            </div>
 
-            <br>
-            <div class="center">
-                <article id="seg_rest">
-                    <header><h3>&#8226;   Chicharronera Cacique Acserí</h3></header>
-                    <br><br>
-                    <iframe src="http://www.caciqueacseri.com/" width="1000" height="400" ></iframe>
-                </article>
-            </div>
-
-            <br>
-
-            <div class="center">
-                <article id="ter_rest">
-                    <header><h3>&#8226;   Pastelería Inglesa</h3></header>
-                    <br><br>
-                    <iframe src="https://pasteleriainglesa.com/" width="1000" height="400" ></iframe>
-                </article>
-            </div>
-
-            <br>
-
-        </section>
 
         <footer id="pieDePagina">
             Derechos reservados DreamTeam &reg; 2022
