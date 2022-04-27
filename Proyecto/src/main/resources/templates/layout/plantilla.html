@@ -36,8 +36,16 @@
         </header>
 
 
-        <footer id="pieDePagina">
-            Derechos reservados DreamTeam &reg; 2022
+        <footer th:fragment="footer" class="position-fixed bottom-0 start-0 end-0 bg-danger text-white mt-5 p-2">
+            <div class="container">
+                <div class="col">
+                    <p class="lead text-center">
+                        &COPY [[#{plantilla.derechos}]]
+                        <a th:href="@{/(lang=es)}">ES</a> | 
+                        <a th:href="@{/(lang=en)}">EN</a>
+                    </p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

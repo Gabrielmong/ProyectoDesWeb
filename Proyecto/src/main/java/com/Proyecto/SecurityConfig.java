@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication()
                 .withUser("admin")
                     .password("{noop}123")
-                    .roles("ADMIN", "VENDEDOR", "USER")
+                    .roles("ADMIN", "USER")
                 .and()
                 .withUser("user")
                     .password("{noop}123")
@@ -27,6 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/")
+                    .hasAnyRole("ADMIN", "USER")
                 .and()
                     .formLogin()
                 .loginPage("/login")

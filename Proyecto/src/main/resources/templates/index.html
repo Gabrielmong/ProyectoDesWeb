@@ -17,18 +17,18 @@
     </head>
 
     <body>
-    <header th:fragment="header">
+        <header th:fragment="header">
             <nav class="navbar navbar-inverse" style="background-color: #c12d31; border-radius: 0px;">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="/">
                             <img src="/images/favicon-32x32.png" width="25" height="25" alt=""/>
                         </a>
-                        
+
                         <a class="navbar-brand" href="/" style="color: white;">EmpanadaReview</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
-                        
+
                         <li><a href="/Page01.html" style="color: white;">&RightArrow;</a></li>
                         <li><a href="/Review.html" style="color: white;">Reseñas</a></li>
                         <li><a href="/Restaurants.html" style="color: white;">Restaurantes</a></li>
@@ -38,41 +38,44 @@
             </nav>
         </header>
 
-    <section id="contenido">
-        <div class="center">
+        <section id="contenido">
+            <div class="center">
+                <br>
+                <h2 class="w400" ><u>Comidas principales</u> (1/3)</h2>
+            </div>
+
             <br>
-            <h2 class="w400" ><u>Comidas principales</u> (1/3)</h2>
-        </div>
+            <div class="center">
+                <article>
+                    <header><h3>&#8226;   Tacos con repollo</h3></header><br><br>
+                    <p class="descripcion" id="tacos_con_repollo">Lorem ipsum dolor sit amet consectetur adipiscing elit, suscipit mattis nunc euismod suspendisse nisl. Rhoncus netus magnis quisque duis et risus consequat faucibus pretium, accumsan nec pellentesque ante nullam nisl tempus lacus fermentum, a fringilla integer vehicula viverra luctus phasellus ultricies. Massa hac blandit ligula class id at ac urna, a mauris primis integer phasellus dui ridiculus, diam vehicula curae risus fusce fames felis.</p><br><br>
+                    <figure>
+                        <img src="images/tacos-ticos.jpg" alt="" width="400" class="center-image"/>
+                        <figcaption class="center-image">Cortesía de "Tacos MAX"</figcaption>
+                    </figure>
+                </article>
+            </div>
 
-        <br>
-        <div class="center">
-            <article>
-                <header><h3>&#8226;   Tacos con repollo</h3></header><br><br>
-                <p class="descripcion" id="tacos_con_repollo">Lorem ipsum dolor sit amet consectetur adipiscing elit, suscipit mattis nunc euismod suspendisse nisl. Rhoncus netus magnis quisque duis et risus consequat faucibus pretium, accumsan nec pellentesque ante nullam nisl tempus lacus fermentum, a fringilla integer vehicula viverra luctus phasellus ultricies. Massa hac blandit ligula class id at ac urna, a mauris primis integer phasellus dui ridiculus, diam vehicula curae risus fusce fames felis.</p><br><br>
-                <figure>
-                    <img src="images/tacos-ticos.jpg" alt="" width="400" class="center-image"/>
-                    <figcaption class="center-image">Cortesía de "Tacos MAX"</figcaption>
-                </figure>
-            </article>
-        </div>
+            <br>
+            <div class="center">
+                <article>
+                    <header><h3>&#8226;   Chifrijo</h3></header><br><br>
+                    <p class="descripcion" id="chifrijo">Lorem ipsum dolor sit amet consectetur adipiscing elit, suscipit mattis nunc euismod suspendisse nisl. Rhoncus netus magnis quisque duis et risus consequat faucibus pretium, accumsan nec pellentesque ante nullam nisl tempus lacus fermentum, a fringilla integer vehicula viverra luctus phasellus ultricies. Massa hac blandit ligula class id at ac urna, a mauris primis integer phasellus dui ridiculus, diam vehicula curae risus fusce fames felis.</p><br><br>
+                    <figure>
+                        <img src="images/chifrijo.jpg" alt="" width="400" class="center-image"/>
+                        <figcaption class="center-image">Cortesía de "Chicharronera el Pizote"</figcaption>
+                    </figure>
+                </article>
+            </div>
 
-        <br>
-        <div class="center">
-            <article>
-                <header><h3>&#8226;   Chifrijo</h3></header><br><br>
-                <p class="descripcion" id="chifrijo">Lorem ipsum dolor sit amet consectetur adipiscing elit, suscipit mattis nunc euismod suspendisse nisl. Rhoncus netus magnis quisque duis et risus consequat faucibus pretium, accumsan nec pellentesque ante nullam nisl tempus lacus fermentum, a fringilla integer vehicula viverra luctus phasellus ultricies. Massa hac blandit ligula class id at ac urna, a mauris primis integer phasellus dui ridiculus, diam vehicula curae risus fusce fames felis.</p><br><br>
-                <figure>
-                    <img src="images/chifrijo.jpg" alt="" width="400" class="center-image"/>
-                    <figcaption class="center-image">Cortesía de "Chicharronera el Pizote"</figcaption>
-                </figure>
-            </article>
-        </div>
+            <br>
+        </section>
 
-        <br>
-    </section>
-
-    <footer id="pieDePagina">
-        Derechos reservados DreamTeam &reg; 2022
-    </footer>
-</body>
+        <footer id="pieDePagina">
+            Derechos reservados DreamTeam &reg; 2022
+            <a th:href="@{/(lang=es)}">ES</a> | 
+            <a th:href="@{/(lang=en)}">EN</a> | 
+            <a th:href="@{/logout}">LogOut</a>
+        </footer>
+    </body>
 </html>
