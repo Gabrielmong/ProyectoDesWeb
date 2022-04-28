@@ -3,7 +3,7 @@
 <html xmlns:th="http://wwww.thymeleaf.org"
       lang="es">
     <head th:fragment="head">
-        <title>EmpanadaReview</title>
+        <title>[[#{accion.titulo}]]</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="html, css, web, fidelitas, comida">
@@ -24,7 +24,7 @@
                         <a class="navbar-brand" href="/">
                             <img src="/images/favicon-32x32.png" width="25" height="25" alt=""/>
                         </a>
-                        <a class="navbar-brand" href="/" style="color: white;">EmpanadaReview</a>
+                        <a class="navbar-brand" href="/" style="color: white;">[[#{accion.titulo}]]</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')"><span sec:authentication="name">Usuario</span></a></li>

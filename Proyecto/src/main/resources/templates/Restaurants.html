@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>EmpanadaReview</title>
+        <title>[[#{accion.titulo}]]</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
@@ -17,7 +17,7 @@
         <header th:replace="layout/plantilla :: header"></header>
         <section id="contenido">
             <div class="center">
-                <br><h2><strong><u>Mis Restaurantes favoritos</u></strong></h2><br>
+                <br><h2><strong><u>[[#{accion.fav}]]</u></strong></h2><br>
             </div>
             <div class="center">
                 <article id="prim_rest">
@@ -51,7 +51,7 @@
         </section>
 
         <footer id="pieDePagina">
-            Derechos reservados DreamTeam &reg; 2022
+            &COPY [[#{plantilla.derechos}]]
             <a th:href="@{/(lang=es)}">ES</a> | 
             <a th:href="@{/(lang=en)}">EN</a>
         </footer>
