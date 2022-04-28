@@ -57,4 +57,9 @@ public class OverallController {
 
         return "/reviews/edit";
     }
+    
+    @GetMapping("/about")
+    public String about(Post post){
+        return "about";
+    }
 }

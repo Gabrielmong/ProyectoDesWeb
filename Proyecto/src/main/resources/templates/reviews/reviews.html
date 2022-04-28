@@ -87,14 +87,14 @@
                     <th style="width:40%; color:white" >[[#{nombre.restaurante}]]</th>
                     <th style="width:30%; color:white">[[#{nombre.restaurante}]]</th>
                     <th style="width:15%; color:white">[[#{nombre.ver}]]</th>
-                    <th style="width:15%; color:white">[[#{nombre.elminar}]]</th>
+                    <th style="width:15%; color:white">[[#{nombre.eliminar}]]</th>
 
                     </tr>
                     <tr th:each="item : ${postsDB}">
                         <td th:text="${item.titulo}"></td>
                         <td th:text="${item.postDate}"></td>
                         <td><a th:href="@{/reviews/} + ${item.idPub}">[[#{nombre.ver}]]</a></td>
-                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">[[#{nombre.elminar}]]</a></td>
+                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">[[#{nombre.eliminar}]]</a></td>
                     </tr>
                 </table>
             </div>
@@ -106,7 +106,7 @@
         </section>
 
         <footer id="pieDePagina">
-             &COPY [[#{plantilla.derechos}]]
+            <a th:href="@{/about}">&COPY [[#{plantilla.derechos}]]</a>
             <a th:href="@{/(lang=es)}">ES</a> | 
             <a th:href="@{/(lang=en)}">EN</a>
         </footer>
