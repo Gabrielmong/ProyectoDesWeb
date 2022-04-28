@@ -50,7 +50,7 @@
             cursor: pointer;
             border-radius: 8px
         }
-        
+
         .button:hover{
             background-color: #990000;
         }
@@ -75,14 +75,15 @@
             <div class="center">
                 <br><h1>LISTADO DE RESEÑAS</h1><br> 
             </div>
+            <div class="center">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Restaurantes" title="Type in a name">
+                <a th:href="@{/agregarPost}" class="button" >Agregar nueva reseña</a> 
+            </div>
 
             <div th:if="${postsDB != null and !postsDB.empty}" class="center">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Restaurantes" title="Type in a name">
+
                 <table id="myTable">
                     <tr class="headerT">
-                    <a th:href="@{/agregarPost}" class="button" >Agregar nueva reseña</a>
-                    <br>
-                    <br> 
                     <th style="width:40%; color:white" >Restaurante</th>
                     <th style="width:30%; color:white">Fecha</th>
                     <th style="width:15%; color:white">Ver</th>
@@ -99,7 +100,7 @@
             </div>
 
             <div th:if="${postsDB == null or postsDB.empty}" class="center"> 
-                No existen reseñas para mostrar
+                No existen reseñas para mostrar :(
             </div>
 
         </section>

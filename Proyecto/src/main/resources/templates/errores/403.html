@@ -4,6 +4,8 @@
     <head>
         <title>Empanada Review</title>
         <meta charset="UTF-8">
+        <link href="../../static/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="../../static/css/menu.css" rel="stylesheet" type="text/css"/>
         <style>
             .contenido {
                 text-align: center;
@@ -21,13 +23,14 @@
         </style>
     </head>
     <body>
-
+        
+        </div>
+        
         <div class="contenido">
-            <a>
-                <img src="images/favicon-32x32.png" alt="" height="32"/>
-            </a>
+            
             <h2>[[#{e403.titulo}]]</h2>
             <p>[[#{e403.texto}]]</p>
+            
             <a th:href="@{/}">[[#{accion.regresar}]]</a>
         </div>
     </body>

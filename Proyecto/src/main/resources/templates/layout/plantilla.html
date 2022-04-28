@@ -27,6 +27,7 @@
                         <a class="navbar-brand" href="/" style="color: white;">EmpanadaReview</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')"><span sec:authentication="name">Usuario</span></a></li>
                         <li><a href="/logout" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')">Logout</a></li>
                         <li><a href="/login" style="color: white;" sec:authorize="!hasAnyRole('ADMIN', 'USER')">Login</a></li>
                         <li><a href="/Review.html" style="color: white;">Reseñas</a></li>

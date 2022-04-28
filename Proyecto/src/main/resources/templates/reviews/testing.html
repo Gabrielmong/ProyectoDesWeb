@@ -28,6 +28,19 @@
             background-color: #4caf50;
             border-radius: 5px;
         }
+        .backButton {
+            border: none;
+            color: white;
+            padding: 13px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: grey;
+            border-radius: 5px;
+        }
     </style>
     <body>
 
@@ -41,7 +54,7 @@
 
                 <p th:text="${postDB.review}"></p>
                 <br>
-
+                <a th:href="@{/Review.html}" class="backButton">Regresar</a>
                 <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}" sec:authorize="hasRole('ADMIN')">Editar</a>
             </div>
         </section>
