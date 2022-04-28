@@ -18,6 +18,7 @@ public class Vigoron implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idChifrijo;
     private String ingrediente;
     private int cantidad;
     
@@ -26,8 +27,8 @@ public class Vigoron implements Serializable{
         
     }
 
-    public Vigoron(String ingrediente, int cantidad) {
-        this.ingrediente = ingrediente;
+    public Vigoron(Long idChifrijo, String ingrediente, int cantidad) {
+        this.idChifrijo = idChifrijo;
         this.cantidad = cantidad;
       
     }

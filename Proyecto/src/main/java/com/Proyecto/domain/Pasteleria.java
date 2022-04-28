@@ -18,7 +18,7 @@ public class Pasteleria implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String plato;
-    private int idPlato;
+    private Long idPlato;
     private String ubicacion;
     
     
@@ -26,7 +26,7 @@ public class Pasteleria implements Serializable{
         
     }
 
-    public Pasteleria(String plato, int ID, String ubicacion) {
+    public Pasteleria(String plato, Long ID, String ubicacion) {
         this.plato = plato;
         this.idPlato = ID;
         this.ubicacion = ubicacion;

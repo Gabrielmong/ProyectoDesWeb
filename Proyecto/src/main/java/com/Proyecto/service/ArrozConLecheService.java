@@ -10,4 +10,6 @@ public interface ArrozConLecheService {
     
     public void delete(ArrozConLeche arrozConLeche);
     
+    public ArrozConLeche getArrozConLeche(ArrozConLeche arrozConLeche);
+    
 }

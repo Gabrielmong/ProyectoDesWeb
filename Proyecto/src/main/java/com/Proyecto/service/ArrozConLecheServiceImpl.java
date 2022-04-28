@@ -29,5 +29,10 @@ public class ArrozConLecheServiceImpl implements ArrozConLecheService{
     public void delete(ArrozConLeche arrozConLeche) {
         arrozConLecheDao.delete(arrozConLeche);
     }
+
+    @Override
+    public ArrozConLeche getArrozConLeche(ArrozConLeche arrozConLeche) {
+        return arrozConLecheDao.findById(arrozConLeche.getIdArrozConLeche()).orElse(null);
+    }
     
 }

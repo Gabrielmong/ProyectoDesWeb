@@ -18,7 +18,7 @@ public class NovilloAlegre implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String plato;
-    private int idPlato;
+    private Long idPlato;
     private String ubicacion;
     
     
@@ -26,7 +26,7 @@ public class NovilloAlegre implements Serializable{
         
     }
 
-    public NovilloAlegre(String plato, int ID, String ubicacion) {
+    public NovilloAlegre(String plato, Long ID, String ubicacion) {
         this.plato = plato;
         this.idPlato = ID;
         this.ubicacion = ubicacion;

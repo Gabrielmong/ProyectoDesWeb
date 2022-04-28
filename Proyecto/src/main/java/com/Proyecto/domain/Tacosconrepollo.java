@@ -18,6 +18,7 @@ public class Tacosconrepollo implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idTacosconrepollo;
     private String ingrediente;
     private int cantidad;
     
@@ -26,7 +27,8 @@ public class Tacosconrepollo implements Serializable{
         
     }
 
-    public Tacosconrepollo(String ingrediente, int cantidad) {
+    public Tacosconrepollo(Long idTacosconrepollo, String ingrediente, int cantidad) {
+        this.idTacosconrepollo = idTacosconrepollo;
         this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       

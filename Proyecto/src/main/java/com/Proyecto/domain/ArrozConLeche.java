@@ -18,6 +18,7 @@ public class ArrozConLeche implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idArrozConLeche;
     private String ingrediente;
     private int cantidad;
     
@@ -26,7 +27,8 @@ public class ArrozConLeche implements Serializable{
         
     }
 
-    public ArrozConLeche(String ingrediente, int cantidad) {
+    public ArrozConLeche(Long idArrozConLeche, String ingrediente, int cantidad) {
+        this.idArrozConLeche = idArrozConLeche;
         this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       

@@ -17,6 +17,7 @@ public class GalloPinto implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idGalloPinto;
     private String ingrediente;
     private int cantidad;
     
@@ -25,7 +26,8 @@ public class GalloPinto implements Serializable{
         
     }
 
-    public GalloPinto(String ingrediente, int cantidad) {
+    public GalloPinto(Long idGalloPinto, String ingrediente, int cantidad) {
+        this.idGalloPinto = idGalloPinto;
         this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       

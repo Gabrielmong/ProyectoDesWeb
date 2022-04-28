@@ -18,6 +18,7 @@ public class Chifrijo implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idChifrijo;
     private String ingrediente;
     private int cantidad;
     
@@ -26,7 +27,8 @@ public class Chifrijo implements Serializable{
         
     }
 
-    public Chifrijo(String ingrediente, int cantidad) {
+    public Chifrijo(Long idChifrijo, String ingrediente, int cantidad) {
+        this.idChifrijo = idChifrijo;
         this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       
