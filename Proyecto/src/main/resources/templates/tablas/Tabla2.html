@@ -3,7 +3,7 @@
       xmlns:th="http://wwww.thymeleaf.org" 
       xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>EmpanadaReview | Reseña</title>
+        <title>[[#{accion.titulo}]] | [[#{accion.resena}]]</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
@@ -120,9 +120,9 @@
                 <br><br><br>
                <table id="myTable">
                     <tr class="headerT">
-                    <th style="width:40%; color:black" >Número</th>
-                    <th style="width:40%; color:black" >Ubicación</th>
-                    <th style="width:30%; color:black">Plato</th>
+                    <th style="width:40%; color:black" >[[#{tabla.num}]]</th>
+                    <th style="width:40%; color:black" >[[#{tabla.ubicacion}]]</th>
+                    <th style="width:30%; color:black">[[#{tabla.plato}]]</th>
                     </tr>
                     <tr th:each="item : ${entrada}">
                         <td th:text="${item.id}"></td>

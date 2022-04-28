@@ -54,8 +54,8 @@
 
                 <p th:text="${postDB.review}"></p>
                 <br>
-                <a th:href="@{/Review.html}" class="backButton">Regresar</a>
-                <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}" sec:authorize="hasRole('ADMIN')">Editar</a>
+                <a th:href="@{/Review.html}" class="backButton">[[#{accion.regresar}]]</a>
+                <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}" sec:authorize="hasRole('ADMIN')">[[#{nombre.editar}]]</a>
             </div>
         </section>
 
