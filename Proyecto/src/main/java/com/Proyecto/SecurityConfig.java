@@ -5,6 +5,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 @Configuration
@@ -27,13 +28,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/")
-                    .hasAnyRole("ADMIN", "USER")
+                .antMatchers("/editPost/**")
+                    .hasRole("ADMIN")
                 .and()
                     .formLogin()
                 .loginPage("/login")
                 .and()
-                    .exceptionHandling().accessDeniedPage("/errores/403");
+                    .exceptionHandling().accessDeniedPage("/errores/403")
+                .and()
+                    .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"));
     }
     
 }

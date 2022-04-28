@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>EmpanadaReview | Reseña</title>
         <meta charset="UTF-8">
@@ -40,7 +42,7 @@
                 <p th:text="${postDB.review}"></p>
                 <br>
 
-                <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}">Editar</a>
+                <a class="editButton" th:href="@{/editPost/}+${postDB.idPub}" sec:authorize="hasRole('ADMIN')">Editar</a>
             </div>
         </section>
 

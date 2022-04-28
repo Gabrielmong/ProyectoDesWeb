@@ -17,30 +17,12 @@
     </head>
 
     <body>
-        <header th:fragment="header">
-            <nav class="navbar navbar-inverse" style="background-color: #c12d31; border-radius: 0px;">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/">
-                            <img src="/images/favicon-32x32.png" width="25" height="25" alt=""/>
-                        </a>
-
-                        <a class="navbar-brand" href="/" style="color: white;">EmpanadaReview</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li><a href="/Page01.html" style="color: white;">&RightArrow;</a></li>
-                        <li><a href="/Review.html" style="color: white;">Reseñas</a></li>
-                        <li><a href="/Restaurants.html" style="color: white;">Restaurantes</a></li>
-                        <li><a href="/Recommendations.html" style="color: white;">Recomendaciones</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <header th:replace="layout/plantilla :: header"></header>S
 
         <section id="contenido">
             <div class="center">
-                <br>
+                <br><br>
+                <a href="/Page01.html" style="color: black; font-weight: bold;">&RightArrow;</a>
                 <h2 class="w400" ><u>Comidas principales</u> (1/3)</h2>
             </div>
 
@@ -67,6 +49,7 @@
                     </figure>
                 </article>
             </div>
+            
 
             <br>
         </section>
@@ -74,8 +57,7 @@
         <footer id="pieDePagina">
             Derechos reservados DreamTeam &reg; 2022
             <a th:href="@{/(lang=es)}">ES</a> | 
-            <a th:href="@{/(lang=en)}">EN</a> | 
-            <a th:href="@{/logout}">LogOut</a>
+            <a th:href="@{/(lang=en)}">EN</a>
         </footer>
     </body>
 </html>

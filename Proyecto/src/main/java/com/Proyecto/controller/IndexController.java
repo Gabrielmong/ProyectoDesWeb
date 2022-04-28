@@ -19,4 +19,24 @@ public class IndexController {
         
         return "index";
     }
+    @GetMapping("/Page01.html")
+    public String page01(Model model) {
+        
+        return "Page01";
+    }
+    @GetMapping("/Page02.html")
+    public String page02(Model model) {
+        
+        return "Page02";
+    }
+    @GetMapping("/Recommendations.html")
+    public String Reco(Model model) {
+        
+        return "Recommendations";
+    }
+    @GetMapping("/Restaurants.html")
+    public String Rest(Model model) {
+        
+        return "Restaurants";
+    }
 }

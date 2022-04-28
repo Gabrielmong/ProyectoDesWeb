@@ -25,7 +25,7 @@ public class TemplateResolverConfiguration {
     public SpringResourceTemplateResolver TemplateResolver_1() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 
-        templateResolver.setPrefix("classpath:/reviews");
+        templateResolver.setPrefix("templates/reviews");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setOrder(1);

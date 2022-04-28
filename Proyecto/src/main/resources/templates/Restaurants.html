@@ -14,23 +14,7 @@
     </head>
 
     <body>
-        <header>
-            <nav class="navbar navbar-inverse" style="background-color: #c12d31; border-radius: 0px;">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/">
-                            <img src="/images/favicon-32x32.png" width="25" height="25" alt=""/>
-                        </a>
-                        <a class="navbar-brand" href="/" style="color: white;">EmpanadaReview</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/Review.html" style="color: white;">Reseñas</a></li>
-                        <li><a href="/Restaurants.html" style="color: white;">Restaurantes</a></li>
-                        <li><a href="/Recommendations.html" style="color: white;">Recomendaciones</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <header th:replace="layout/plantilla :: header"></header>
         <section id="contenido">
             <div class="center">
                 <br><h2><strong><u>Mis Restaurantes favoritos</u></strong></h2><br>
