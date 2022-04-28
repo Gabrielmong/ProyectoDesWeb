@@ -29,6 +29,7 @@ public class Vigoron implements Serializable{
 
     public Vigoron(Long idChifrijo, String ingrediente, int cantidad) {
         this.idChifrijo = idChifrijo;
+        this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       
     }
