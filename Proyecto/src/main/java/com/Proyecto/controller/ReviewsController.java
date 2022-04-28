@@ -3,8 +3,11 @@ package com.Proyecto.controller;
 import com.Proyecto.domain.ArrozConLeche;
 import com.Proyecto.domain.Post;
 import com.Proyecto.service.ArrozConLecheService;
+import com.Proyecto.service.ChicharroneraService;
 import com.Proyecto.service.ChifrijoService;
 import com.Proyecto.service.GalloPintoService;
+import com.Proyecto.service.NovilloAlegreService;
+import com.Proyecto.service.PasteleriaService;
 import com.Proyecto.service.PatiService;
 import com.Proyecto.service.PostService;
 import com.Proyecto.service.TacosconrepolloService;
@@ -36,6 +39,12 @@ public class ReviewsController {
     private TacosconrepolloService tacosconrepolloService;
     @Autowired
     private VigoronService vigoronService;
+    @Autowired
+    private ChicharroneraService chicharroneraService;
+    @Autowired
+    private NovilloAlegreService novilloAlegreService;
+    @Autowired
+    private PasteleriaService pasteleriaService;
     
     
     @GetMapping("/reviews/{idPub}")
@@ -105,5 +114,32 @@ public class ReviewsController {
         model.addAttribute("entrada", entrada);
         
         return "/tablas/Tabla1";
+    }
+    
+    @GetMapping("/tablas/Chicharronera")
+    public String verChicha(Model model){
+        
+        var entrada = chicharroneraService.getChicharronera();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla2";
+    }
+    
+    @GetMapping("/tablas/Novillo")
+    public String verNovillo(Model model){
+        
+        var entrada = novilloAlegreService.getNovilloAlegre();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla2";
+    }
+    
+    @GetMapping("/tablas/Pasteleria")
+    public String verPasteleria(Model model){
+        
+        var entrada = pasteleriaService.getPasteleria();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla2";
     }
 }

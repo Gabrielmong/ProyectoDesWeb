@@ -11,14 +11,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Chihcarronera")
+@Table(name = "Pasteleria")
 public class Pasteleria implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String plato;
-    private Long idPlato;
+    private String platos;
+    private Long id;
     private String ubicacion;
     
     
@@ -26,9 +26,9 @@ public class Pasteleria implements Serializable{
         
     }
 
-    public Pasteleria(String plato, Long ID, String ubicacion) {
-        this.plato = plato;
-        this.idPlato = ID;
+    public Pasteleria(String platos, Long ID, String ubicacion) {
+        this.platos = platos;
+        this.id = ID;
         this.ubicacion = ubicacion;
       
     }
