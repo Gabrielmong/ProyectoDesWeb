@@ -1,33 +1,33 @@
 package com.Proyecto.service;
 
-import com.Proyecto.dao.ChicharroneraDao;
-import com.Proyecto.domain.Chicharronera;
+import com.Proyecto.dao.ChifrijoDao;
+import com.Proyecto.domain.Chifrijo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class ChifrijoServiceImpl implements ChicharroneraService{
+public class ChifrijoServiceImpl implements ChifrijoService{
     
     @Autowired
-    private ChicharroneraDao chicharroneraDao;
+    private ChifrijoDao chifrijoDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Chicharronera> getChicharronera() {
-        return (List<Chicharronera>) chicharroneraDao.findAll();
+    public List<Chifrijo> getChifrijo() {
+        return (List<Chifrijo>) chifrijoDao.findAll();
     }
 
     @Override
     @Transactional
-    public void save(Chicharronera chicharronera) {
-        chicharroneraDao.save(chicharronera);
+    public void save(Chifrijo chifrijo) {
+        chifrijoDao.save(chifrijo);
     }
 
     @Override
-    public void delete(Chicharronera chicharronera) {
-        chicharroneraDao.delete(chicharronera);
+    public void delete(Chifrijo chifrijo) {
+        chifrijoDao.delete(chifrijo);
     }
     
 }

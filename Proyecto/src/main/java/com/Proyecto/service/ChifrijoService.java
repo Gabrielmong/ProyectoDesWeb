@@ -1,13 +1,13 @@
 package com.Proyecto.service;
 
-import com.Proyecto.domain.Chicharronera;
+import com.Proyecto.domain.Chifrijo;
 import java.util.List;
 
 public interface ChifrijoService {
-    public List<Chicharronera> getChicharronera();
+    public List<Chifrijo> getChifrijo();
     
-    public void save(Chicharronera chicharronera);
+    public void save(Chifrijo chifrijo);
     
-    public void delete(Chicharronera chicharronera);
+    public void delete(Chifrijo chifrijo);
     
 }
