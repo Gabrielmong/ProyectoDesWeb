@@ -6,8 +6,10 @@ import java.util.List;
 public interface NovilloAlegreService {
     public List<NovilloAlegre> getNovilloAlegre();
     
-    public void save(NovilloAlegre NovilloAlegre);
+    public void save(NovilloAlegre novilloAlegre);
     
-    public void delete(NovilloAlegre NovilloAlegre);
+    public void delete(NovilloAlegre novilloAlegre);
+    
+    public NovilloAlegre getNovilloAlegre(NovilloAlegre galloPinto);
     
 }

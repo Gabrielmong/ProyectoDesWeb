@@ -11,23 +11,28 @@ import org.springframework.transaction.annotation.Transactional;
 public class GalloPintoServiceImpl implements GalloPintoService{
     
     @Autowired
-    private GalloPintoDao GalloPintoDao;
+    private GalloPintoDao galloPintoDao;
 
     @Override
     @Transactional(readOnly = true)
     public List<GalloPinto> getGalloPinto() {
-        return (List<GalloPinto>) GalloPintoDao.findAll();
+        return (List<GalloPinto>) galloPintoDao.findAll();
     }
 
     @Override
     @Transactional
-    public void save(GalloPinto GalloPinto) {
-        GalloPintoDao.save(GalloPinto);
+    public void save(GalloPinto galloPinto) {
+        galloPintoDao.save(galloPinto);
     }
 
     @Override
-    public void delete(GalloPinto GalloPinto) {
-        GalloPintoDao.delete(GalloPinto);
+    public void delete(GalloPinto galloPinto) {
+        galloPintoDao.delete(galloPinto);
+    }
+    
+    @Override
+    public GalloPinto getGalloPinto(GalloPinto galloPinto) {
+        return galloPintoDao.findById(galloPinto.getId()).orElse(null);
     }
     
     

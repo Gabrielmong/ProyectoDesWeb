@@ -10,4 +10,6 @@ public interface VigoronService {
     public void save(Vigoron vigoron);
     
     public void delete(Vigoron vigoron);
+    
+    public Vigoron getVigoron(Vigoron vigoron);
 }

@@ -103,25 +103,25 @@
                             <br>
                             <input type="hidden" name="idPub" th:field="*{idPub}" />
                             <label for="titulo">[[#{nombre.restaurante}]]: </label>
-                            <input type="text" name="titulo" th:field="*{titulo}"  />
+                            <input type="text" name="titulo" th:field="*{titulo}"  required>
                             <br>
                         </p>
                         <p>
                             <br>
                             <label for="autor">[[#{nombre.autor}]]: </label>
-                            <input type="text" name="autor" th:field="*{autor}" />
+                            <input type="text" name="autor" th:field="*{autor}" required>
                             <br>
                         </p>
                         <p>
                             <br>
                             <label for="review">[[#{accion.resena}]]: </label><br>
-                            <textarea id="textArea" th:field="*{review}" maxlength="1000" placeholder="Escriba aquí..."></textarea>
+                            <textarea id="textArea" th:field="*{review}" maxlength="1000" placeholder="Escriba aquí..." required></textarea>
                         <div id="textArea-remaining" style="display: none">1000 caracteres restantes.</div>
 
                         </p>
                         <p>
                             <label for="postDate">[[#{nombre.fecha}]]: </label>
-                            <input type="date" name="postDate" th:field="*{postDate}" />
+                            <input type="date" name="postDate" th:field="*{postDate}" required>
                             <br>
                         </p>
                         <br>

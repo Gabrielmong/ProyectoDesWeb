@@ -30,4 +30,9 @@ public class ChifrijoServiceImpl implements ChifrijoService{
         chifrijoDao.delete(chifrijo);
     }
     
+    @Override
+    public Chifrijo getchifrijo(Chifrijo chifrijo) {
+        return chifrijoDao.findById(chifrijo.getId()).orElse(null);
+    }
+    
 }

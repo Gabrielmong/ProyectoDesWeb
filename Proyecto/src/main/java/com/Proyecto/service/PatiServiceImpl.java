@@ -30,4 +30,9 @@ public class PatiServiceImpl implements PatiService{
         patiDao.delete(pati);
     }
     
+    @Override
+    public Pati getPati(Pati pati) {
+        return patiDao.findById(pati.getId()).orElse(null);
+    }
+    
 }

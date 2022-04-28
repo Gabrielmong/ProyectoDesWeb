@@ -10,4 +10,6 @@ public interface ChifrijoService {
     
     public void delete(Chifrijo chifrijo);
     
+    public Chifrijo getchifrijo(Chifrijo chifrijo);
+    
 }

@@ -30,4 +30,9 @@ public class TacosconrepolloServiceImpl implements TacosconrepolloService{
         tacosconrepolloDao.delete(tacosconrepollo);
     }
     
+    @Override
+    public Tacosconrepollo getTacosconrepollo(Tacosconrepollo tacosconrepollo) {
+        return tacosconrepolloDao.findById(tacosconrepollo.getId()).orElse(null);
+    }
+    
 }

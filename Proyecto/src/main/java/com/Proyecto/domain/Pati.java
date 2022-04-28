@@ -18,7 +18,7 @@ public class Pati implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPati;
+    private Long id;
     private String ingrediente;
     private int cantidad;
     
@@ -27,8 +27,8 @@ public class Pati implements Serializable{
         
     }
 
-    public Pati(Long idPati, String ingrediente, int cantidad) {
-        this.idPati = idPati;
+    public Pati(Long id, String ingrediente, int cantidad) {
+        this.id = id;
         this.ingrediente = ingrediente;
         this.cantidad = cantidad;
       

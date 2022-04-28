@@ -29,6 +29,11 @@ public class NovilloAlegreServiceImpl implements NovilloAlegreService{
     public void delete(NovilloAlegre NovilloAlegre) {
         NovilloAlegreDao.delete(NovilloAlegre);
     }
+
+    @Override
+    public NovilloAlegre getNovilloAlegre(NovilloAlegre galloPinto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

@@ -1,7 +1,14 @@
 package com.Proyecto.controller;
 
+import com.Proyecto.domain.ArrozConLeche;
 import com.Proyecto.domain.Post;
+import com.Proyecto.service.ArrozConLecheService;
+import com.Proyecto.service.ChifrijoService;
+import com.Proyecto.service.GalloPintoService;
+import com.Proyecto.service.PatiService;
 import com.Proyecto.service.PostService;
+import com.Proyecto.service.TacosconrepolloService;
+import com.Proyecto.service.VigoronService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +24,18 @@ public class ReviewsController {
     
     @Autowired
     private PostService postService;
+    @Autowired
+    private ArrozConLecheService arrozConLecheService;
+    @Autowired
+    private ChifrijoService chifrijoService;
+    @Autowired
+    private PatiService patiService;
+    @Autowired
+    private GalloPintoService galloPintoService;
+    @Autowired
+    private TacosconrepolloService tacosconrepolloService;
+    @Autowired
+    private VigoronService vigoronService;
     
     
     @GetMapping("/reviews/{idPub}")
@@ -35,4 +54,56 @@ public class ReviewsController {
         return "/templates/reviews";
     }
     
+    @GetMapping("/tablas/ArrozConLeche")
+    public String verArroz(Model model){
+        
+        var entrada = arrozConLecheService.getArrozConLeche();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
+    @GetMapping("/tablas/Chifrijo")
+    public String verChifrijo(Model model){
+        
+        var entrada = chifrijoService.getChifrijo();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
+    
+    @GetMapping("/tablas/Pati")
+    public String verPati(Model model){
+        
+        var entrada = patiService.getPati();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
+    
+    @GetMapping("/tablas/GalloPinto")
+    public String verGallo(Model model){
+        
+        var entrada = galloPintoService.getGalloPinto();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
+    
+    @GetMapping("/tablas/Tacos")
+    public String verTacos(Model model){
+        
+        var entrada = tacosconrepolloService.getTacosconrepollo();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
+    
+    @GetMapping("/tablas/Vigoron")
+    public String verVigoron(Model model){
+        
+        var entrada = vigoronService.getVigoron();
+        model.addAttribute("entrada", entrada);
+        
+        return "/tablas/Tabla1";
+    }
 }

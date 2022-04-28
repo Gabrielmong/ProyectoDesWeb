@@ -15,14 +15,69 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+    <style>
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        .grid-container > div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+        }
+    </style>
 
     <body>
         <header th:replace="layout/plantilla :: header"></header>S
 
         <section id="contenido">
-           
 
-            <br>
+            <div class="center">
+                <br>
+                <h1>DreamTeam</h1>
+                <br><br>
+                <p>
+                    Solo somos 3 papanatas que por "casualidad" hemos tenido los mismos cursos 3 cuatrimestres seguidos xd<br>
+                    Pero trabajamos bien en grupo entre los 3 entonces todo resulta bastante bien<br><br><br>
+                    A veces nos gana la procastinación tho<br><br>
+                </p>
+
+
+
+            </div>
+            <br><br><br><br>
+            <div class="grid-container">
+                <div class="item1">
+                    <figure>
+                        <img src="/images/Gabriel.png" alt="" class="center-image"/>
+                        <figcaption class="center-image">Gabriel, siendo un muerto de hambre</figcaption>
+                    </figure>
+                </div>
+                <div class="item2">
+                    <figure>
+                        <img src="/images/Lucía.png" alt="" class="center-image"/>
+                        <figcaption class="center-image">Lucía, ahogándose con su taza</figcaption>
+                    </figure>
+                </div>
+                <div class="item3">
+                    <figure>
+                        <img src="/images/Esteban.png" alt="" class="center-image"/>
+                        <figcaption class="center-image">Esteban, intentando aguantar la risa</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
+
         </section>
 
         <footer id="pieDePagina">

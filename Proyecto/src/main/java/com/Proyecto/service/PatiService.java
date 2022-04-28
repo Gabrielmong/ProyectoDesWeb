@@ -10,4 +10,5 @@ public interface PatiService {
     
     public void delete(Pati pati);
     
+    public Pati getPati(Pati pati);
 }

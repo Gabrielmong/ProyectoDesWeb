@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head>
+        <title>EmpanadaReview | Reseña</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"><link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        .editButton {
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+        .backButton {
+            border: none;
+            color: white;
+            padding: 13px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: grey;
+            border-radius: 5px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/images/search.png');
+            background-position: 14px 14px;
+            background-repeat: no-repeat;
+            width: 58%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            border-radius: 8px
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.headerT, #myTable tr:hover {
+            background-color: #c12d31;
+        }
+        .button {
+            border: none;
+            width: 40%;
+            color: white;
+            background-color: #c12d31;
+            padding: 12px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px
+        }
+
+        .button:hover{
+            background-color: #990000;
+        }
+        
+        .wrapper {
+            text-align: center;
+        }
+        .backButton {
+            border: none;
+            color: white;
+            padding: 13px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: grey;
+            border-radius: 5px;
+        }
+    </style>
+    <body>
+
+        <header th:replace="layout/plantilla :: header"></header>
+        <section id="contenido">
+            <div class="center">
+                <br><br><br>
+               <table id="myTable">
+                    <tr class="headerT">
+                    <th style="width:40%; color:black" >Número</th>
+                    <th style="width:40%; color:black" >Ingrediente</th>
+                    <th style="width:30%; color:black">Cantidad</th>
+                    </tr>
+                    <tr th:each="item : ${entrada}">
+                        <td th:text="${item.id}"></td>
+                        <td th:text="${item.ingrediente}"></td>
+                        <td th:text="${item.cantidad}"></td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div class="wrapper">
+                <a onclick="history.back()" class="backButton">[[#{accion.regresar}]]</a>
+            </div>
+        </section>
+        <footer id="pieDePagina">
+            <a th:href="@{/about}">&COPY [[#{plantilla.derechos}]]</a>
+            <a th:href="@{/(lang=es)}">ES</a> | 
+            <a th:href="@{/(lang=en)}">EN</a>
+        </footer>
+    </body>
+</html>

@@ -1,5 +1,6 @@
 package com.Proyecto.service;
 
+import com.Proyecto.domain.Pati;
 import com.Proyecto.domain.Tacosconrepollo;
 import java.util.List;
 
@@ -9,4 +10,6 @@ public interface TacosconrepolloService {
     public void save(Tacosconrepollo tacosconrepollo);
     
     public void delete(Tacosconrepollo tacosconrepollo);
+    
+    public Tacosconrepollo getTacosconrepollo(Tacosconrepollo tacosconrepollo);
 }

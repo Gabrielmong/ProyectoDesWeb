@@ -30,4 +30,9 @@ public class VigoronServiceImpl implements VigoronService{
         vigoronDao.delete(vigoron);
     }
     
+    @Override
+    public Vigoron getVigoron(Vigoron vigoron) {
+        return vigoronDao.findById(vigoron.getId()).orElse(null);
+    }
+    
 }

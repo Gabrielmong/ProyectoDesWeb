@@ -32,7 +32,7 @@ public class ArrozConLecheServiceImpl implements ArrozConLecheService{
 
     @Override
     public ArrozConLeche getArrozConLeche(ArrozConLeche arrozConLeche) {
-        return arrozConLecheDao.findById(arrozConLeche.getIdArrozConLeche()).orElse(null);
+        return arrozConLecheDao.findById(arrozConLeche.getId()).orElse(null);
     }
     
 }
