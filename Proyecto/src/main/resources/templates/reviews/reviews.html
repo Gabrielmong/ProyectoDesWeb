@@ -56,7 +56,7 @@
         }
     </style>
     <head>
-        <title>EmpanadaReview | Reseñas</title>
+        <title>[[#{accion.titulo}]] | [[#{accion.resena}]]</title>
         <meta charset="UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,28 +73,28 @@
         <header th:replace="layout/plantilla :: header"></header>
         <section id="contenido">
             <div class="center">
-                <br><h1>LISTADO DE RESEÑAS</h1><br> 
+                <br><h1>[[#{accion.listado}]]</h1><br> 
             </div>
             <div class="center">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Restaurantes" title="Type in a name">
-                <a th:href="@{/agregarPost}" class="button" >Agregar nueva reseña</a> 
+                <a th:href="@{/agregarPost}" class="button" >[[#{accion.agregar}]]</a> 
             </div>
 
             <div th:if="${postsDB != null and !postsDB.empty}" class="center">
 
                 <table id="myTable">
                     <tr class="headerT">
-                    <th style="width:40%; color:white" >Restaurante</th>
-                    <th style="width:30%; color:white">Fecha</th>
-                    <th style="width:15%; color:white">Ver</th>
-                    <th style="width:15%; color:white">Eliminar</th>
+                    <th style="width:40%; color:white" >[[#{nombre.restaurante}]]</th>
+                    <th style="width:30%; color:white">[[#{nombre.restaurante}]]</th>
+                    <th style="width:15%; color:white">[[#{nombre.ver}]]</th>
+                    <th style="width:15%; color:white">[[#{nombre.elminar}]]</th>
 
                     </tr>
                     <tr th:each="item : ${postsDB}">
                         <td th:text="${item.titulo}"></td>
                         <td th:text="${item.postDate}"></td>
-                        <td><a th:href="@{/reviews/} + ${item.idPub}">Ver</a></td>
-                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">Eliminar</a></td>
+                        <td><a th:href="@{/reviews/} + ${item.idPub}">[[#{nombre.ver}]]</a></td>
+                        <td><a th:href="@{/eliminarPost/} + ${item.idPub}">[[#{nombre.elminar}]]</a></td>
                     </tr>
                 </table>
             </div>
@@ -106,7 +106,7 @@
         </section>
 
         <footer id="pieDePagina">
-            Derechos reservados DreamTeam &reg; 2022
+             &COPY [[#{plantilla.derechos}]]
             <a th:href="@{/(lang=es)}">ES</a> | 
             <a th:href="@{/(lang=en)}">EN</a>
         </footer>

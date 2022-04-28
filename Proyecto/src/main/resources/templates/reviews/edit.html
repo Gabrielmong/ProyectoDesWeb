@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>EmpanadaReview | Editar reseña</title>
+        <title>[[#{accion.titulo}]] | [[#{nombre.editar}]]</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
@@ -93,7 +93,7 @@
             <div class="contenido">
                 <div class="center">
                     <br>
-                    <h2>Editar reseña</h2>
+                    <h2>[[#{nombre.editar}]]</h2>
                     <br>
                     <form th:action="@{/guardarPost/}"
                           method="post"
@@ -102,32 +102,32 @@
                         <p>
                             <br>
                             <input type="hidden" name="idPub" th:field="*{idPub}" />
-                            <label for="titulo">Restaurante: </label>
+                            <label for="titulo">[[#{nombre.restaurante}]]: </label>
                             <input type="text" name="titulo" th:field="*{titulo}"  />
                             <br>
                         </p>
                         <p>
                             <br>
-                            <label for="autor">Autor: </label>
+                            <label for="autor">[[#{nombre.autor}]]: </label>
                             <input type="text" name="autor" th:field="*{autor}" />
                             <br>
                         </p>
                         <p>
                             <br>
-                            <label for="review">Reseña: </label><br>
+                            <label for="review">[[#{accion.resena}]]: </label><br>
                             <textarea id="textArea" th:field="*{review}" maxlength="1000" placeholder="Escriba aquí..."></textarea>
                         <div id="textArea-remaining" style="display: none">1000 caracteres restantes.</div>
 
                         </p>
                         <p>
-                            <label for="postDate">Fecha: </label>
+                            <label for="postDate">[[#{nombre.fecha}]]: </label>
                             <input type="date" name="postDate" th:field="*{postDate}" />
                             <br>
                         </p>
                         <br>
                         <br>
                         <div class="wrapper">
-                            <a th:href="@{/Review.html}" class="backButton">Regresar</a>
+                            <a th:href="@{/Review.html}" class="backButton">[[#{accion.regresar}]]</a>
                             <input type="submit" name="guardar" value="Guardar cambios" style="width: 200px;"/>
 
                         </div>
@@ -140,7 +140,7 @@
                     <br>
                     </section>
                     <footer id="pieDePagina">
-                        Derechos reservados DreamTeam &reg; 2022
+                        &COPY [[#{plantilla.derechos}]]
                         <a th:href="@{/(lang=es)}">ES</a> | 
                         <a th:href="@{/(lang=en)}">EN</a>
                     </footer>

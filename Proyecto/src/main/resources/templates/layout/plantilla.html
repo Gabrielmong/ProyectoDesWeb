@@ -27,12 +27,12 @@
                         <a class="navbar-brand" href="/" style="color: white;">[[#{accion.titulo}]]</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')"><span sec:authentication="name">Usuario</span></a></li>
+                        <li><a href="#" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')"><span sec:authentication="name">[[#{accion.usuario}]]</span></a></li>
                         <li><a href="/logout" style="color: white;" sec:authorize="hasAnyRole('ADMIN', 'USER')">Logout</a></li>
                         <li><a href="/login" style="color: white;" sec:authorize="!hasAnyRole('ADMIN', 'USER')">Login</a></li>
-                        <li><a href="/Review.html" style="color: white;">Reseñas</a></li>
-                        <li><a href="/Restaurants.html" style="color: white;">Restaurantes</a></li>
-                        <li><a href="/Recommendations.html" style="color: white;">Recomendaciones</a></li>
+                        <li><a href="/Review.html" style="color: white;">[[#{accion.resena}]]</a></li>
+                        <li><a href="/Restaurants.html" style="color: white;">[[#{nombre.restaurantes}]]</a></li>
+                        <li><a href="/Recommendations.html" style="color: white;">[[#{accion.recomendaciones}]]</a></li>
                     </ul>
                 </div>
             </nav>
