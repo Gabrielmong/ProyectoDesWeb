@@ -9,7 +9,9 @@ CREATE TABLE `Comidas`.`posts`(
         `post_date` DATE, PRIMARY KEY 
         (`id_pub`));
 INSERT INTO `Comidas`.`posts` (`titulo`, `autor`, `review`, `post_date`)
-	VALUES ('Title Test', 'Author Test', 'Review Here', '2022-03-10');
+	VALUES ('Tacos Max', 'Gabriel Monge', 'La típica soda, pero deliciosa, la comida barata y rica, de vez en cuando tiran promociones de una empanada arreglada a 900 colones que es brutal, 10/10', '2022-03-10');
+    INSERT INTO `Comidas`.`posts` (`titulo`, `autor`, `review`, `post_date`)
+	VALUES ('Garden Bistro', 'Esteban Salguero', 'Lugar bontio, Gabriel me recomendó que fuera porque el trabaja ahí, excelente cafetería y un amplio menú', '2022-02-18');
 DROP USER IF EXISTS 'user123'@'%';
 CREATE USER 'user123'@'%' IDENTIFIED BY 'password123';
 GRANT ALL PRIVILEGES ON Comidas.* to 'user123'@'%';
